@@ -210,7 +210,7 @@ df = merge_duplicates(df, 'ss_oligo')
 df = remove_unwanted(df, 0.4)
 df = remove_dodgy(df)
 features = process_features(df, 'full_guide_sequence', ARM_LENGTH)
-#labels = process_labels(df)
+labels = process_labels(df)
 
 X_train_original = features.loc[df.apply(lambda _: _.New in [0, 1, 2], axis=1), :]
 y_train_original = labels.loc[[0, 1, 2], 'hdr_cleavage_0.4']
